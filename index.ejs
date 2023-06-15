@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My HTML Page</title>
+    <!-- Include the Bootstrap CSS file -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h1>My Database Data</h1>
+    <!-- Generate the table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <% for (let column in data[0]) { %>
+            <th><%= column %></th>
+          <% } %>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let row of data) { %>
+          <tr>
+            <% for (let column in row) { %>
+              <td><%= row[column] %></td>
+            <% } %>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>
+</html>
